@@ -1,0 +1,1 @@
+<h1>web desde htaccess</h1>

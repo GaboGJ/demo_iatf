@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# 1. Redirigir la raíz del sitio a la carpeta /web
+RewriteRule ^$ web/index.php [L]
+
+# 2. Si el archivo solicitado no existe físicamente (como carpetas o imágenes)
+# enviar la petición al index de la carpeta web
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ web/index.php [L,QSA]
